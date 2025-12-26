@@ -1,0 +1,339 @@
+:root {
+  --morado-oscuro: #3a0ca3;
+  --morado: #7209b7;
+  --morado-claro: #b5179e;
+  --fondo: #f4f1fa;
+  --blanco: #ffffff;
+  --amarillo: #fdfc8f;
+}
+
+/* ================= */
+/* RESET */
+/* ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, var(--fondo), #e8def8);
+  color: #222;
+  padding-bottom: 90px; /* espacio para footer fijo */
+}
+
+/* ================= */
+/* BANNER */
+/* ================= */
+.banner {
+  background:
+    linear-gradient(
+      rgba(58, 12, 163, 0.75),
+      rgba(114, 9, 183, 0.75)
+    ),
+    url("banner.jpg"); /* ← AQUÍ VA TU IMAGEN */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 70px 20px;
+  text-align: center;
+  color: white;
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: 2px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= */
+/* NAV */
+/* ================= */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 18px;
+  background: var(--morado-oscuro);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+
+nav a {
+  text-decoration: none;
+  padding: 10px 26px;
+  border-radius: 30px;
+  background: white;
+  color: var(--morado-oscuro);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: var(--morado-claro);
+  color: white;
+}
+
+/* ================= */
+/* CONTENEDOR GENERAL */
+/* ================= */
+.contenedor {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 28px; /* ← CLAVE: espacio lateral */
+}
+
+/* ================= */
+/* TITULOS */
+/* ================= */
+.titulo-seccion {
+  text-align: center;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 800;
+  color: var(--morado-oscuro);
+  margin: 70px auto 55px;
+  letter-spacing: 1px;
+}
+
+.titulo-seccion::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--morado), var(--morado-claro));
+  margin: 15px auto 0;
+  border-radius: 10px;
+}
+
+/* ================= */
+/* PARTICIPANTES */
+/* ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 35px;
+  margin-bottom: 70px;
+}
+
+.card {
+  background: var(--blanco);
+  border-radius: 22px;
+  padding: 15px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.card h3 {
+  margin-top: 15px;
+  font-size: 18px;
+  color: var(--morado-oscuro);
+}
+
+/* ================= */
+/* TABLAS PREMIOS */
+/* ================= */
+.tabla-premios {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto 70px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  table-layout: fixed;
+}
+
+.tabla-premios thead {
+  background: linear-gradient(90deg, #4a00e0, #8e2de2);
+}
+
+.tabla-premios th {
+  padding: 16px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+
+.tabla-premios td {
+  padding: 14px;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.tabla-premios th:first-child,
+.tabla-premios td:first-child {
+  width: 65%;
+}
+
+.tabla-premios th:last-child,
+.tabla-premios td:last-child {
+  width: 35%;
+}
+
+.receptor {
+  font-weight: 600;
+}
+
+/* estados */
+.estado-ganador {
+  background: #b9fbc0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.estado-nominado {
+  background: #ffc9c9;
+  font-weight: bold;
+  text-align: center;
+}
+
+.estado-pordefinir {
+  background: var(--amarillo);
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================= */
+/* TABLA RECUENTO */
+/* ================= */
+.tabla-recuento {
+  width: 100%;
+  max-width: 700px;
+  margin: 40px auto 80px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.tabla-recuento thead {
+  background: linear-gradient(90deg, #3a0ca3, #7209b7);
+}
+
+.tabla-recuento th {
+  padding: 14px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+.tabla-recuento td {
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.tabla-recuento td:first-child {
+  font-weight: 600;
+}
+
+.recuento-premios {
+  background: #9ef59e;
+  font-weight: bold;
+  text-align: center;
+}
+
+.recuento-nominaciones {
+  background: #ff6b6b;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================= */
+/* FOOTER */
+/* ================= */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--morado-oscuro);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+/* ================= */
+/* RESPONSIVE */
+/* ================= */
+@media (max-width: 600px) {
+
+  /* CONTENEDOR CON AIRE REAL */
+  .contenedor {
+    padding: 40px 18px 0;
+  }
+
+  /* TITULOS */
+  .titulo-seccion {
+    margin: 40px auto 35px;
+    font-size: 22px;
+  }
+
+  /* TABLAS NOMINADOS / GANADORES */
+  .tabla-premios {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 50px;
+    border-radius: 16px;
+  }
+
+  /* EVITA QUE SE PEGUEN VISUALMENTE */
+  .tabla-premios + .tabla-premios {
+    margin-top: 30px;
+  }
+
+  /* TEXTO Y ESPACIADO INTERNO */
+  .tabla-premios th {
+    font-size: 14px;
+    padding: 12px 8px;
+  }
+
+  .tabla-premios td {
+    font-size: 13px;
+    padding: 12px 8px;
+  }
+
+  /* ASEGURA PROPORCIÓN DE COLUMNAS */
+  .tabla-premios th:first-child,
+  .tabla-premios td:first-child {
+    width: 62%;
+  }
+
+  .tabla-premios th:last-child,
+  .tabla-premios td:last-child {
+    width: 38%;
+  }
+
+  /* TARJETAS PARTICIPANTES */
+  .grid {
+    padding: 0 10px;
+  }
+
+  .card img {
+    height: 190px;
+  }
+
+}
+
